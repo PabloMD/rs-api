@@ -1,18 +1,21 @@
+import { Link } from "react-router-dom";
+import './User.scss';
+
 const formattedDate = (dateString) =>
   dateString ? new Date(dateString).toDateString() : "";
 
 function User(props){
-    const { name, surname, address, email, registeredAt, profileImg } = props;
+    const { userId, name, surname, address, email, registeredAt, profileImg } = props;
 
     return (
       <div className="User">
+        <div>
+          <img src={profileImg} alt="profile" />
+        </div>
         <ul>
           <li>
-            <img src={profileImg} alt="profile" />
-          </li>
-          <li>
             <strong>Name: </strong>
-            {name || "Name was not passed"}
+            <Link to={`/users/${userId}`}>{name || "Name was not passed"}</Link>
           </li>
           <li>
             <strong>Surname: </strong>
