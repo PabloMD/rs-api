@@ -64,14 +64,16 @@ function UserList() {
                 {users.map((user) => (
                   <User
                     key={user.userId}
-                    userId={user.userId}
-                    name={user.name}
-                    surname={user.surname}
-                    address={user.address}
-                    email={user.email}
-                    registeredAt={user.registeredAt}
-                    location={user.location}
-                    profileImg={user.profileImg}
+                    // is it good practice to pass whole user/object?
+                    {...user}
+                    // userId={user.userId}
+                    // name={user.name}
+                    // surname={user.surname}
+                    // address={user.address}
+                    // email={user.email}
+                    // registeredAt={user.registeredAt}
+                    // location={user.location}
+                    // profileImg={user.profileImg}
                   />
                 ))}
               </div>
