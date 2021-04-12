@@ -16,6 +16,7 @@ function UserDetails({ users }) {
           email={user.email}
           registeredAt={user.registeredAt}
           profileImg={user.profileImg}
+          location={user.location}
           showLocalization
         />
       ) : (

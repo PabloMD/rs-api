@@ -39,6 +39,7 @@ function UserList() {
                   email: user.email,
                   registeredAt: user.registered?.date.toString(),
                   profileImg: user.picture.thumbnail,
+                  location: user.location.coordinates
                 }))
               );
             }, 1000);
@@ -69,6 +70,7 @@ function UserList() {
                     address={user.address}
                     email={user.email}
                     registeredAt={user.registeredAt}
+                    location={user.location}
                     profileImg={user.profileImg}
                   />
                 ))}
