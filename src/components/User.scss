@@ -11,7 +11,8 @@
         list-style: none;
     }
     .location{
-        width: 100%;
+        width: 500px;
+        max-width: 100%;
         height: 200px;
         .leaflet-container{
             min-height: 400px;
