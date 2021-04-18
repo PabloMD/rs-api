@@ -11,7 +11,7 @@ const getAddressFromApiResponse = (user) => {
     }
 }
 
-const USERS_LIMIT = 10;
+export const USERS_LIMIT = 10;
 
 const awesomePlaceholder = Array(USERS_LIMIT)
   .fill(true)
@@ -29,7 +29,6 @@ function UserList() {
         fetch(`https://randomuser.me/api/?results=${USERS_LIMIT}`)
           .then((response) => response.json())
           .then((data) => {
-            setTimeout(function () {
               setUsers(
                 data.results.map((user) => ({
                   userId: user.login.uuid,
@@ -42,7 +41,6 @@ function UserList() {
                   location: user.location.coordinates
                 }))
               );
-            }, 1000);
           })
           .catch((error) => {
             console.error(error);
