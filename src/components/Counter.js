@@ -38,16 +38,22 @@ export default class Counter extends React.Component {
           >
             -
           </button>
-          <button className="reset" onClick={() => {
+          <button
+            className="reset"
+            onClick={() => {
               this.setState({
-                  counter: this.state.initial
-              })
-          }}>Reset</button>
+                counter: this.state.initial,
+              });
+            }}
+          >
+            Reset
+          </button>
         </div>
         <div>
           <form onSubmit={this.handleSubmit}>
             <input
               type="number"
+              className="initialInput"
               value={this.state.initialInput}
               onChange={(e) => this.setState({ initialInput: e.target.value })}
             ></input>
